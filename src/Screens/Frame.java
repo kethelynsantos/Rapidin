@@ -15,7 +15,7 @@ public class Frame extends JFrame {
                 super.paintComponent(g);
                 ImageIcon icon = new ImageIcon(backgroundImagePath);
                 Image image = icon.getImage();
-                g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+                g.drawImage(image, 0, 0, 390, 844, this);
             }
         };
 

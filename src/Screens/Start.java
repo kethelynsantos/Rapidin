@@ -6,7 +6,7 @@ public class Start extends Frame {
         super("Rapidin", "src/Images/start.png");
 
         Button btn_start = new Button();
-        btn_start.setBounds(90, 685, 193, 48);
+        btn_start.setBounds(95, 720, 198, 48);
         btn_start.addActionListener(e -> {
             Home home = new Home();
             home.setVisible(true);
