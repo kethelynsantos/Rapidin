@@ -7,7 +7,7 @@ public class Frame extends JFrame {
     public Frame(String title, String backgroundImagePath) {
         super(title);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(0, 0, 390, 844);
+        setBounds(0, 0, 402, 844);
 
         JPanel mainPanel = new JPanel() {
             @Override

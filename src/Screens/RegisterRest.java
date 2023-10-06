@@ -22,9 +22,13 @@ public class RegisterRest extends Frame{
             dispose(); // fecha a tela Home
         });
 
+        Input name = new Input();
+        name.setBounds(40, 50, 50, 30);
+
         // Adiciona os botões à tela
         getContentPane().add(btn_voltar);
         getContentPane().add(btn_register);
+        getContentPane().add(name);
 
         setVisible(true);
         setLocationRelativeTo(null);

@@ -9,10 +9,4 @@ public class Button extends JButton {
         setContentAreaFilled(false);
         setBorderPainted(true);
     }
-
-    public Button(String text) {
-        // Chama o construtor padrão e define o texto do botão
-        this();
-        setText(text);
-    }
 }
