@@ -1,7 +1,10 @@
 package Screens;
 
 
-public class ChoiceOrder extends Frame{
+import Classes.Button;
+import Classes.Frame;
+
+public class ChoiceOrder extends Frame {
     public ChoiceOrder() {
         super("Rapidin", "src/Images/choice_order.png");
 
@@ -19,7 +22,7 @@ public class ChoiceOrder extends Frame{
             System.out.println("fui clicado");
             ChoiceRest choiceRest = new ChoiceRest();
             choiceRest.setVisible(true);
-            dispose(); // fecha a tela register
+            dispose();
         });
 
         // Adiciona o botão à tela

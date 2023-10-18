@@ -1,6 +1,10 @@
 package Screens;
 
-public class RegisterOrder extends Frame{
+import Classes.Button;
+import Classes.Frame;
+import Classes.Input;
+
+public class RegisterOrder extends Frame {
     public RegisterOrder() {
         super("Rapidin", "src/Images/register_order.png");
 
@@ -10,7 +14,7 @@ public class RegisterOrder extends Frame{
             System.out.println("fui clicado");
             HomeRest homeRest = new HomeRest();
             homeRest.setVisible(true);
-            dispose(); // fecha a tela register
+            dispose();
         });
 
         Button btn_register = new Button();
@@ -19,7 +23,7 @@ public class RegisterOrder extends Frame{
             System.out.println("fui clicado");
             OrderOk orderOk = new OrderOk();
             orderOk.setVisible(true);
-            dispose(); // fecha a tela Home
+            dispose();
         });
 
         Input name = new Input();
@@ -28,7 +32,7 @@ public class RegisterOrder extends Frame{
         Input price = new Input();
         price.setBounds(47, 322, 297, 35);
 
-        // Adiciona os botões à tela
+        // Adiciona à tela
         getContentPane().add(btn_back);
         getContentPane().add(btn_register);
         getContentPane().add(name);

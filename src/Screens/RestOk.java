@@ -1,7 +1,10 @@
 package Screens;
 
 
-public class RestOk extends Frame{
+import Classes.Button;
+import Classes.Frame;
+
+public class RestOk extends Frame {
     public RestOk() {
         super("Rapidin", "src/Images/rest_ok.png");
 
@@ -10,7 +13,7 @@ public class RestOk extends Frame{
         btn_continue.addActionListener(e -> {
             HomeRest homeRest = new HomeRest();
             homeRest.setVisible(true);
-            dispose(); // fecha a tela Start
+            dispose();
         });
 
         // Adiciona o botão à tela

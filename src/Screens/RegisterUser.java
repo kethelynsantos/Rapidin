@@ -1,6 +1,10 @@
 package Screens;
 
-public class RegisterUser extends Frame{
+import Classes.Button;
+import Classes.Frame;
+import Classes.Input;
+
+public class RegisterUser extends Frame {
     public RegisterUser() {
         super("Rapidin", "src/Images/register_user.png");
 
@@ -10,7 +14,7 @@ public class RegisterUser extends Frame{
             System.out.println("fui clicado");
             Choice choice = new Choice();
             choice.setVisible(true);
-            dispose(); // fecha a tela register
+            dispose();
         });
 
         Button btn_register = new Button();
@@ -19,7 +23,7 @@ public class RegisterUser extends Frame{
             System.out.println("fui clicado");
             UserOk serOk = new UserOk();
             serOk.setVisible(true);
-            dispose(); // fecha a tela Home
+            dispose();
         });
 
         Button btn_account = new Button();
@@ -27,7 +31,7 @@ public class RegisterUser extends Frame{
         btn_account.addActionListener(e -> {
             HomeUser homeUser = new HomeUser();
             homeUser.setVisible(true);
-            dispose(); // fecha a tela Start
+            dispose();
         });
 
         Input name = new Input();
@@ -36,7 +40,7 @@ public class RegisterUser extends Frame{
         Input cnpj = new Input();
         cnpj.setBounds(47, 322, 297, 35);
 
-        // Adiciona os botões à tela
+        // Adiciona à tela
         getContentPane().add(btn_back);
         getContentPane().add(btn_register);
         getContentPane().add(btn_account);

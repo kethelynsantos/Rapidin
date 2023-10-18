@@ -1,6 +1,9 @@
 package Screens;
 
 
+import Classes.Button;
+import Classes.Frame;
+
 public class Start extends Frame {
     public Start() {
         super("Rapidin", "src/Images/start.png");

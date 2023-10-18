@@ -1,7 +1,10 @@
 package Screens;
 
 
-public class ChoiceOk extends Frame{
+import Classes.Button;
+import Classes.Frame;
+
+public class ChoiceOk extends Frame {
     public ChoiceOk() {
         super("Rapidin", "src/Images/choice_ok.png");
 
@@ -10,7 +13,7 @@ public class ChoiceOk extends Frame{
         btn_continue.addActionListener(e -> {
             HomeUser homeUser = new HomeUser();
             homeUser.setVisible(true);
-            dispose(); // fecha a tela Start
+            dispose();
         });
 
         // Adiciona o botão à tela
