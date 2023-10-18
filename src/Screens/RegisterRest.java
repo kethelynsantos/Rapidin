@@ -16,19 +16,22 @@ public class RegisterRest extends Frame{
         Button btn_register = new Button();
         btn_register.setBounds(47, 676, 295, 48);
         btn_register.addActionListener(e -> {
-            System.out.println("fui clicado");
-            RegisterRest registerRest = new RegisterRest();
-            registerRest.setVisible(true);
-            dispose(); // fecha a tela Home
+            RestOk restOk = new RestOk();
+            restOk.setVisible(true);
+            dispose(); // fecha a tela Start
         });
 
         Input name = new Input();
-        name.setBounds(40, 50, 50, 30);
+        name.setBounds(44, 240, 297, 35);
+
+        Input cnpj = new Input();
+        cnpj.setBounds(47, 318, 297, 35);
 
         // Adiciona os botões à tela
         getContentPane().add(btn_voltar);
         getContentPane().add(btn_register);
         getContentPane().add(name);
+        getContentPane().add(cnpj);
 
         setVisible(true);
         setLocationRelativeTo(null);

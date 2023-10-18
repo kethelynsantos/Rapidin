@@ -18,8 +18,8 @@ public class Home extends Frame{
         btn_user.setBounds(148, 578, 96, 95);
         btn_user.addActionListener(e -> {
             System.out.println("fui clicado");
-            RegisterRest registerRest = new RegisterRest();
-            registerRest.setVisible(true);
+            RegisterUser registerUser = new RegisterUser();
+            registerUser.setVisible(true);
             dispose(); // fecha a tela Home
         });
 

@@ -9,6 +9,7 @@ public class Input extends JTextField {
         setBackground(Color.blue);
 //        setBorder(false);
         setVisible(true);
-        setFont(new Font("Arial", Font.BOLD, 15));
+        setForeground(Color.WHITE); // Define a cor da fonte
+        setFont(new Font("Sora", Font.BOLD, 18));
     }
 }
