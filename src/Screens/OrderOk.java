@@ -1,15 +1,15 @@
 package Screens;
 
 
-public class UserOk extends Frame{
-    public UserOk() {
-        super("Rapidin", "src/Images/user_ok.png");
+public class OrderOk extends Frame{
+    public OrderOk() {
+        super("Rapidin", "src/Images/order_ok.png");
 
         Button btn_continue = new Button();
         btn_continue.setBounds(47, 675, 295, 48);
         btn_continue.addActionListener(e -> {
-            HomeUser homeUser = new HomeUser();
-            homeUser.setVisible(true);
+            HomeRest homeRest = new HomeRest();
+            homeRest.setVisible(true);
             dispose(); // fecha a tela Start
         });
 
@@ -23,6 +23,6 @@ public class UserOk extends Frame{
     }
 
     public static void main(String[] args) {
-        new UserOk();
+        new OrderOk();
     }
 }

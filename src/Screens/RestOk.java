@@ -8,11 +8,10 @@ public class RestOk extends Frame{
         Button btn_continue = new Button();
         btn_continue.setBounds(47, 675, 295, 48);
         btn_continue.addActionListener(e -> {
-            Home home = new Home();
-            home.setVisible(true);
+            HomeRest homeRest = new HomeRest();
+            homeRest.setVisible(true);
             dispose(); // fecha a tela Start
         });
-
 
         // Adiciona o botão à tela
         getContentPane().add(btn_continue);

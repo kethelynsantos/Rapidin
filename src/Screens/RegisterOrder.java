@@ -1,15 +1,15 @@
 package Screens;
 
-public class RegisterUser extends Frame{
-    public RegisterUser() {
-        super("Rapidin", "src/Images/register_user.png");
+public class RegisterOrder extends Frame{
+    public RegisterOrder() {
+        super("Rapidin", "src/Images/register_order.png");
 
         Button btn_back = new Button();
         btn_back.setBounds(28, 50, 30, 30);
         btn_back.addActionListener(e -> {
             System.out.println("fui clicado");
-            Choice choice = new Choice();
-            choice.setVisible(true);
+            HomeRest homeRest = new HomeRest();
+            homeRest.setVisible(true);
             dispose(); // fecha a tela register
         });
 
@@ -17,31 +17,22 @@ public class RegisterUser extends Frame{
         btn_register.setBounds(47, 676, 295, 48);
         btn_register.addActionListener(e -> {
             System.out.println("fui clicado");
-            UserOk serOk = new UserOk();
-            serOk.setVisible(true);
+            OrderOk orderOk = new OrderOk();
+            orderOk.setVisible(true);
             dispose(); // fecha a tela Home
-        });
-
-        Button btn_account = new Button();
-        btn_account.setBounds(46, 413, 295, 20);
-        btn_account.addActionListener(e -> {
-            HomeUser homeUser = new HomeUser();
-            homeUser.setVisible(true);
-            dispose(); // fecha a tela Start
         });
 
         Input name = new Input();
         name.setBounds(47, 246, 297, 35);
 
-        Input cnpj = new Input();
-        cnpj.setBounds(47, 322, 297, 35);
+        Input price = new Input();
+        price.setBounds(47, 322, 297, 35);
 
         // Adiciona os botões à tela
         getContentPane().add(btn_back);
         getContentPane().add(btn_register);
-        getContentPane().add(btn_account);
         getContentPane().add(name);
-        getContentPane().add(cnpj);
+        getContentPane().add(price);
 
         setVisible(true);
         setLocationRelativeTo(null);
@@ -50,6 +41,6 @@ public class RegisterUser extends Frame{
     }
 
     public static void main(String[] args) {
-        new RegisterUser();
+        new RegisterOrder();
     }
 }

@@ -8,8 +8,8 @@ public class Start extends Frame {
         Button btn_start = new Button();
         btn_start.setBounds(95, 720, 198, 48);
         btn_start.addActionListener(e -> {
-            Home home = new Home();
-            home.setVisible(true);
+            Choice choice = new Choice();
+            choice.setVisible(true);
             dispose(); // fecha a tela Start
         });
 

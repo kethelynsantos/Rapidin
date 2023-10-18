@@ -4,12 +4,12 @@ public class RegisterRest extends Frame{
     public RegisterRest() {
         super("Rapidin", "src/Images/register_rest.png");
 
-        Button btn_voltar = new Button();
-        btn_voltar.setBounds(28, 50, 30, 30);
-        btn_voltar.addActionListener(e -> {
+        Button btn_back = new Button();
+        btn_back.setBounds(28, 50, 30, 30);
+        btn_back.addActionListener(e -> {
             System.out.println("fui clicado");
-            Home home = new Home();
-            home.setVisible(true);
+            Choice choice = new Choice();
+            choice.setVisible(true);
             dispose(); // fecha a tela register
         });
 
@@ -21,15 +21,24 @@ public class RegisterRest extends Frame{
             dispose(); // fecha a tela Start
         });
 
+        Button btn_account = new Button();
+        btn_account.setBounds(46, 413, 295, 20);
+        btn_account.addActionListener(e -> {
+            HomeRest homeRest = new HomeRest();
+            homeRest.setVisible(true);
+            dispose(); // fecha a tela Start
+        });
+
         Input name = new Input();
-        name.setBounds(44, 240, 297, 35);
+        name.setBounds(47, 256, 297, 35);
 
         Input cnpj = new Input();
-        cnpj.setBounds(47, 318, 297, 35);
+        cnpj.setBounds(47, 333, 297, 35);
 
-        // Adiciona os botões à tela
-        getContentPane().add(btn_voltar);
+        // Adiciona à tela
+        getContentPane().add(btn_back);
         getContentPane().add(btn_register);
+        getContentPane().add(btn_account);
         getContentPane().add(name);
         getContentPane().add(cnpj);
 
