@@ -1,7 +1,10 @@
 package Screens;
 
 
-public class HomeRest extends Frame{
+import Classes.Button;
+import Classes.Frame;
+
+public class HomeRest extends Frame {
     public HomeRest() {
         super("Rapidin", "src/Images/home_rest.png");
 
@@ -10,7 +13,7 @@ public class HomeRest extends Frame{
         btn_menu.addActionListener(e -> {
             RegisterOrder registerOrder = new RegisterOrder();
             registerOrder.setVisible(true);
-            dispose(); // fecha a tela Start
+            dispose();
         });
 
         Button btn_back = new Button();
@@ -19,7 +22,7 @@ public class HomeRest extends Frame{
             System.out.println("fui clicado");
             Choice choice = new Choice();
             choice.setVisible(true);
-            dispose(); // fecha a tela register
+            dispose();
         });
 
         // Adiciona o botão à tela

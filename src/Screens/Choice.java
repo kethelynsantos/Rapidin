@@ -1,7 +1,10 @@
 package Screens;
 
 
-public class Choice extends Frame{
+import Classes.Button;
+import Classes.Frame;
+
+public class Choice extends Frame {
     public Choice() {
         super("Rapidin", "src/Images/choice.png");
 
@@ -11,7 +14,7 @@ public class Choice extends Frame{
             System.out.println("fui clicado");
             RegisterRest registerRest = new RegisterRest();
             registerRest.setVisible(true);
-            dispose(); // fecha a tela Home
+            dispose();
         });
 
         Button btn_user = new Button();
@@ -20,7 +23,7 @@ public class Choice extends Frame{
             System.out.println("fui clicado");
             RegisterUser registerUser = new RegisterUser();
             registerUser.setVisible(true);
-            dispose(); // fecha a tela Home
+            dispose();
         });
 
 

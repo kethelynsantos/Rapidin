@@ -1,7 +1,10 @@
 package Screens;
 
 
-public class UserOk extends Frame{
+import Classes.Button;
+import Classes.Frame;
+
+public class UserOk extends Frame {
     public UserOk() {
         super("Rapidin", "src/Images/user_ok.png");
 
@@ -10,7 +13,7 @@ public class UserOk extends Frame{
         btn_continue.addActionListener(e -> {
             HomeUser homeUser = new HomeUser();
             homeUser.setVisible(true);
-            dispose(); // fecha a tela Start
+            dispose();
         });
 
 

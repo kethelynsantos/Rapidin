@@ -1,7 +1,10 @@
 package Screens;
 
 
-public class HomeUser extends Frame{
+import Classes.Button;
+import Classes.Frame;
+
+public class HomeUser extends Frame {
     public HomeUser() {
         super("Rapidin", "src/Images/home_user.png");
 
@@ -11,7 +14,7 @@ public class HomeUser extends Frame{
             System.out.println("fui clicado");
             Choice choice = new Choice();
             choice.setVisible(true);
-            dispose(); // fecha a tela register
+            dispose();
         });
 
         Button btn_order = new Button();
@@ -19,15 +22,15 @@ public class HomeUser extends Frame{
         btn_order.addActionListener(e -> {
             ChoiceRest choiceRest = new ChoiceRest();
             choiceRest.setVisible(true);
-            dispose(); // fecha a tela Start
+            dispose();
         });
 
         Button btn_menu = new Button();
         btn_menu.setBounds(205, 675, 167, 48);
         btn_menu.addActionListener(e -> {
-            Choice choice = new Choice();
-            choice.setVisible(true);
-            dispose(); // fecha a tela Start
+            Menu menu = new Menu();
+            menu.setVisible(true);
+            dispose();
         });
 
         // Adiciona o botão à tela
