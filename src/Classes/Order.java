@@ -8,20 +8,4 @@ public class Order {
         this.restaurants = restaurants;
         this.users = users;
     }
-
-    public String getRestaurants() {
-        return restaurants;
-    }
-
-    public void setRestaurants(String restaurants) {
-        this.restaurants = restaurants;
-    }
-
-    public String getUsers() {
-        return users;
-    }
-
-    public void setUsers(String users) {
-        this.users = users;
-    }
 }

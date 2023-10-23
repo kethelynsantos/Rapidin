@@ -1,11 +1,8 @@
 package Screens;
 
 import Classes.*;
-import Classes.Button;
-import Classes.Frame;
-import Classes.Input;
 import java.util.Objects;
-
+import javax.swing.JOptionPane;
 
 public class RegisterRest extends Frame {
     public RegisterRest() {
@@ -28,28 +25,38 @@ public class RegisterRest extends Frame {
 
         Button btn_register = new Button();
         btn_register.setBounds(47, 676, 295, 48);
-
         btn_register.addActionListener(e -> {
-                String name = nameField.getText();
-                String cnpj = cnpjField.getText();
+            String name = nameField.getText();
+            String cnpj = cnpjField.getText();
 
-                Restaurant restaurant = new Restaurant(name, cnpj);
+            if (!Objects.equals(name, "") && !Objects.equals(cnpj, "")) {
+                // verifica se o nome contém apenas caracteres
+                if (!name.matches("^[a-zA-Z\\s]+$")) {
+                    JOptionPane.showMessageDialog(RegisterRest.this,
+                            "Nome inválido. Deve conter apenas letras e espaços.", "Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
 
-                if (!Objects.equals(name, "") && !Objects.equals(cnpj, "")) {
+                if (isCnpjValid(cnpj)) {
+                    Restaurant restaurant = new Restaurant(name, cnpj);
+
                     App.registerRest(restaurant);
 
                     RestOk restOk = new RestOk();
                     restOk.setVisible(true);
                     dispose();
                 } else {
-                    System.out.println("erro");
-                    RegisterRest registerRest = new RegisterRest();
-                    registerRest.setVisible(true);
-                    dispose();
+                    JOptionPane.showMessageDialog(RegisterRest.this,
+                            "O CNPJ não é válido.", "Erro",
+                            JOptionPane.ERROR_MESSAGE);
                 }
-
+            } else {
+                JOptionPane.showMessageDialog(RegisterRest.this,
+                        "Por favor, preencha todos os campos.", "Erro",
+                        JOptionPane.ERROR_MESSAGE);
             }
-        );
+        });
 
         Button btn_account = new Button();
         btn_account.setBounds(46, 413, 295, 20);
@@ -59,7 +66,7 @@ public class RegisterRest extends Frame {
             dispose();
         });
 
-        // Adiciona à tela
+        // Adicione à tela
         getContentPane().add(btn_back);
         getContentPane().add(btn_register);
         getContentPane().add(btn_account);
@@ -69,10 +76,32 @@ public class RegisterRest extends Frame {
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);
-
-    };
+    }
 
     public static void main(String[] args) {
         new RegisterRest();
     }
+
+    private boolean isCnpjValid(String cnpj) {
+        // remove caracteres não numéricos
+        cnpj = cnpj.replaceAll("[^0-9]", "");
+
+        // verifica se o CNPJ possui 14 dígitos
+        if (cnpj.length() != 14) {
+            return false;
+        }
+
+        // verifica se todos os dígitos são iguais
+        boolean allDigitsEqual = true;
+        char firstDigit = cnpj.charAt(0);
+        for (char digit : cnpj.toCharArray()) {
+            if (digit != firstDigit) {
+                allDigitsEqual = false;
+                break;
+            }
+        }
+
+        return !allDigitsEqual;
+    }
+
 }
