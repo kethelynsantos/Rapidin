@@ -17,7 +17,6 @@ public class RegisterOrder extends Frame {
         Button btn_back = new Button();
         btn_back.setBounds(28, 50, 30, 30);
         btn_back.addActionListener(e -> {
-            System.out.println("fui clicado");
             HomeRest homeRest = new HomeRest();
             homeRest.setVisible(true);
             dispose();
@@ -42,7 +41,7 @@ public class RegisterOrder extends Frame {
                     double price = Double.parseDouble(priceStr);
                     Food food = new Food(name, price);
 
-                    App.registerOrder(food);
+                    Restaurant.registerOrder(food);
 
                     OrderOk orderOk = new OrderOk();
                     orderOk.setVisible(true);
