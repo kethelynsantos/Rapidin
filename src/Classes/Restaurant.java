@@ -3,13 +3,13 @@ package Classes;
 import java.util.ArrayList;
 
 public class Restaurant {
-    private String name;
-    private String cnpj;
+    public static String name;
+    public static String cnpj;
     public static ArrayList<Food> ordersList = new ArrayList<>();
 
     public Restaurant(String name, String cnpj) {
-        this.name = name;
-        this.cnpj = cnpj;
+        Restaurant.name = name;
+        Restaurant.cnpj = cnpj;
     }
 
     public static void printMenu() {

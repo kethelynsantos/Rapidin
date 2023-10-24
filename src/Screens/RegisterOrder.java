@@ -43,6 +43,8 @@ public class RegisterOrder extends Frame {
 
                     Restaurant.registerOrder(food);
 
+                    System.out.println(Restaurant.ordersList + " " + Restaurant.name);
+
                     OrderOk orderOk = new OrderOk();
                     orderOk.setVisible(true);
                     dispose();
