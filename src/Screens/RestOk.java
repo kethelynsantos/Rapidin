@@ -6,7 +6,7 @@ import Classes.Frame;
 
 public class RestOk extends Frame {
     public RestOk() {
-        super("Rapidin", "src/Images/rest_ok.png");
+        super("RestOk", "src/Images/rest_ok.png");
 
         Button btn_continue = new Button();
         btn_continue.setBounds(47, 675, 295, 48);

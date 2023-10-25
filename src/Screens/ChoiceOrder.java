@@ -6,7 +6,7 @@ import Classes.Frame;
 
 public class ChoiceOrder extends Frame {
     public ChoiceOrder() {
-        super("Rapidin", "src/Images/choice_order.png");
+        super("ChoiceOrder", "src/Images/choice_order.png");
 
         Button btn_ok = new Button();
         btn_ok.setBounds(47, 675, 295, 48);

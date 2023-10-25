@@ -6,7 +6,7 @@ import Classes.Frame;
 
 public class Menu extends Frame {
     public Menu() {
-        super("Rapidin", "src/Images/menu.png");
+        super("Menu", "src/Images/menu.png");
 
         Button btn_back = new Button();
         btn_back.setBounds(28, 50, 30, 30);

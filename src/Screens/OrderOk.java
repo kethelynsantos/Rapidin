@@ -6,7 +6,7 @@ import Classes.Frame;
 
 public class OrderOk extends Frame {
     public OrderOk() {
-        super("Rapidin", "src/Images/order_ok.png");
+        super("OrderOk", "src/Images/order_ok.png");
 
         Button btn_continue = new Button();
         btn_continue.setBounds(47, 675, 295, 48);

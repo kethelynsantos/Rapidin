@@ -1,13 +1,13 @@
 package Screens;
 
 
+import Classes.App;
 import Classes.Button;
 import Classes.Frame;
 
 public class HomeRest extends Frame {
     public HomeRest() {
-        super("Rapidin", "src/Images/home_rest.png");
-
+        super("HomeRest", "src/Images/home_rest.png");
         Button btn_choice = new Button();
         btn_choice.setBounds(47, 675, 167, 48);
         btn_choice.addActionListener(e -> {

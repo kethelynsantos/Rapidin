@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 public class RegisterRest extends Frame {
     public RegisterRest() {
-        super("Rapidin", "src/Images/register_rest.png");
+        super("RegisterRest", "src/Images/register_rest.png");
 
         Input nameField = new Input();
         nameField.setBounds(47, 256, 297, 35);
@@ -38,19 +38,21 @@ public class RegisterRest extends Frame {
                     return;
                 }
 
-                if (isCnpjValid(cnpj)) {
-                    Restaurant restaurant = new Restaurant(name, cnpj);
 
-                    App.registerRest(restaurant);
+                    Restaurant restaurant = new Restaurant(name, cnpj);
+                    System.out.println(name + cnpj);
+                    System.out.println("restaurant" + restaurant);
+
+                    App.registerRest(name, cnpj);
 
                     RestOk restOk = new RestOk();
                     restOk.setVisible(true);
                     dispose();
-                } else {
-                    JOptionPane.showMessageDialog(RegisterRest.this,
-                            "O CNPJ não é válido.", "Erro",
-                            JOptionPane.ERROR_MESSAGE);
-                }
+//                } else {
+//                    JOptionPane.showMessageDialog(RegisterRest.this,
+//                            "O CNPJ não é válido.", "Erro",
+//                            JOptionPane.ERROR_MESSAGE);
+//                }
             } else {
                 JOptionPane.showMessageDialog(RegisterRest.this,
                         "Por favor, preencha todos os campos.", "Erro",

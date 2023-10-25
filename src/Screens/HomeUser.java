@@ -6,7 +6,7 @@ import Classes.Frame;
 
 public class HomeUser extends Frame {
     public HomeUser() {
-        super("Rapidin", "src/Images/home_user.png");
+        super("HomeUser", "src/Images/home_user.png");
 
         Button btn_back = new Button();
         btn_back.setBounds(28, 50, 30, 30);

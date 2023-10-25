@@ -6,7 +6,7 @@ import Classes.Frame;
 
 public class ChoiceRest extends Frame {
     public ChoiceRest() {
-        super("Rapidin", "src/Images/choice_rest.png");
+        super("ChoiceRest", "src/Images/choice_rest.png");
 
         Button btn_next = new Button();
         btn_next.setBounds(47, 675, 295, 48);

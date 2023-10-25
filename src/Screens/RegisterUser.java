@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class RegisterUser extends Frame {
     public RegisterUser() {
-        super("Rapidin", "src/Images/register_user.png");
+        super("RegisterUser", "src/Images/register_user.png");
 
         Input nameField = new Input();
         nameField.setBounds(47, 246, 297, 35);

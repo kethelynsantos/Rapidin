@@ -6,7 +6,7 @@ import Classes.Frame;
 
 public class Start extends Frame {
     public Start() {
-        super("Rapidin", "src/Images/start.png");
+        super("Start", "src/Images/start.png");
 
         Button btn_start = new Button();
         btn_start.setBounds(95, 720, 198, 48);

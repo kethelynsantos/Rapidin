@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 public class RegisterOrder extends Frame {
     public RegisterOrder() {
-        super("Rapidin", "src/Images/register_order.png");
+        super("RegisterOrder", "src/Images/register_order.png");
 
         Input nameField = new Input();
         nameField.setBounds(47, 246, 297, 35);
@@ -40,11 +40,8 @@ public class RegisterOrder extends Frame {
                 try {
                     double price = Double.parseDouble(priceStr);
                     Food food = new Food(name, price);
-
-                    Restaurant.registerOrder(food);
-
-                    System.out.println(Restaurant.ordersList + " " + Restaurant.name);
-
+                    App.restaurant.registerOrder(food);
+                    App.restaurant = null;
                     OrderOk orderOk = new OrderOk();
                     orderOk.setVisible(true);
                     dispose();

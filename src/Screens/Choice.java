@@ -6,7 +6,7 @@ import Classes.Frame;
 
 public class Choice extends Frame {
     public Choice() {
-        super("Rapidin", "src/Images/choice.png");
+        super("Choice", "src/Images/choice.png");
 
         Button btn_rest = new Button();
         btn_rest.setBounds(94, 574, 201, 48);
