@@ -8,11 +8,11 @@ public class HomeRest extends Frame {
     public HomeRest() {
         super("Rapidin", "src/Images/home_rest.png");
 
-        Button btn_register = new Button();
-        btn_register.setBounds(47, 675, 167, 48);
-        btn_register.addActionListener(e -> {
-            RegisterOrder registerOrder = new RegisterOrder();
-            registerOrder.setVisible(true);
+        Button btn_choice = new Button();
+        btn_choice.setBounds(47, 675, 167, 48);
+        btn_choice.addActionListener(e -> {
+            RegisterChoice registerChoice = new RegisterChoice();
+            registerChoice.setVisible(true);
             dispose();
         });
 
@@ -33,7 +33,7 @@ public class HomeRest extends Frame {
         });
 
         // Adiciona à tela
-        getContentPane().add(btn_register);
+        getContentPane().add(btn_choice);
         getContentPane().add(btn_menu);
         getContentPane().add(btn_back);
 
