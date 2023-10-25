@@ -1,16 +1,17 @@
 package Screens;
 
 
+import Classes.App;
 import Classes.Button;
 import Classes.Frame;
-import Classes.App;
 import Classes.Restaurant;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
-public class RegisterChoice extends Frame {
-    public RegisterChoice() {
-        super("RegisterChoice", "src/Images/choice_rest.png");
+public class RegisterView extends Frame {
+    public RegisterView() {
+        super("RegisterView", "src/Images/choice_rest.png");
 
         // cria um painel para a tela de escolha
         JPanel choicePanel = new JPanel();
@@ -29,8 +30,8 @@ public class RegisterChoice extends Frame {
         btn_next.setBounds(47, 675, 295, 48);
         btn_next.addActionListener(e -> {
             App.restaurant = restaurantComboBox.getItemAt(restaurantComboBox.getSelectedIndex());
-            RegisterOrder registerOrder = new RegisterOrder();
-            registerOrder.setVisible(true);
+            Menu menu = new Menu(App.restaurant);
+            menu.setVisible(true); // passa o restaurante selecionado para a tela de Menu
             dispose();
         });
 
@@ -53,6 +54,6 @@ public class RegisterChoice extends Frame {
     }
 
     public static void main(String[] args) {
-        new RegisterChoice();
+        new RegisterView();
     }
 }

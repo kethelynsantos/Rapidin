@@ -1,6 +1,7 @@
 package Screens;
 
 
+import Classes.App;
 import Classes.Button;
 import Classes.Frame;
 
@@ -28,7 +29,7 @@ public class HomeUser extends Frame {
         Button btn_menu = new Button();
         btn_menu.setBounds(205, 675, 167, 48);
         btn_menu.addActionListener(e -> {
-            Menu menu = new Menu();
+            Menu menu = new Menu(App.restaurant);
             menu.setVisible(true);
             dispose();
         });

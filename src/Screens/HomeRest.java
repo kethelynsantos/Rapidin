@@ -16,11 +16,11 @@ public class HomeRest extends Frame {
             dispose();
         });
 
-        Button btn_menu = new Button();
-        btn_menu.setBounds(205, 675, 167, 48);
-        btn_menu.addActionListener(e -> {
-            Menu menu = new Menu();
-            menu.setVisible(true);
+        Button btn_view = new Button();
+        btn_view.setBounds(205, 675, 167, 48);
+        btn_view.addActionListener(e -> {
+            RegisterView registerView = new RegisterView();
+            registerView.setVisible(true);
             dispose();
         });
 
@@ -34,7 +34,7 @@ public class HomeRest extends Frame {
 
         // Adiciona à tela
         getContentPane().add(btn_choice);
-        getContentPane().add(btn_menu);
+        getContentPane().add(btn_view);
         getContentPane().add(btn_back);
 
         setVisible(true);

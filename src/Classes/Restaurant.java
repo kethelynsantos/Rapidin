@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Restaurant {
     public String name;
     public String cnpj;
-    public  ArrayList<Food> ordersList = new ArrayList<>();
+    public static ArrayList<Food> foodsList = new ArrayList<>();
 
 
     public Restaurant(String name, String cnpj) {
@@ -21,16 +21,20 @@ public class Restaurant {
 
     }
 
-    public  void registerOrder(Food food) {
-        ordersList.add(food);
+    public static ArrayList<Food> getFoods() {
+        return foodsList;
+    }
 
-        System.out.println(ordersList);
+    public  void addFood(Food food) {
+        foodsList.add(food);
+
+        System.out.println(foodsList);
     }
 
     public  void removeOrder(Food food) {
-        ordersList.remove(food);
+        foodsList.remove(food);
 
-        System.out.println(ordersList);
+        System.out.println(foodsList);
     }
 
     @Override

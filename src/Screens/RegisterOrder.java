@@ -40,7 +40,7 @@ public class RegisterOrder extends Frame {
                 try {
                     double price = Double.parseDouble(priceStr);
                     Food food = new Food(name, price);
-                    App.restaurant.registerOrder(food);
+                    App.restaurant.addFood(food);
                     App.restaurant = null;
                     OrderOk orderOk = new OrderOk();
                     orderOk.setVisible(true);

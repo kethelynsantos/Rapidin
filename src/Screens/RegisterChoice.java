@@ -20,7 +20,6 @@ public class RegisterChoice extends Frame {
         ArrayList<Restaurant> restaurantList = App.restaurantList;
         System.out.println(restaurantList);
 
-        // cria um array de nomes de restaurantes a partir da lista
         String[] restaurantOptions = new String[restaurantList.size()];
         DefaultComboBoxModel<Restaurant> model = new DefaultComboBoxModel<>(App.restaurantList.toArray(new Restaurant[0]));
         JComboBox<Restaurant> restaurantComboBox = new JComboBox<>(model);
