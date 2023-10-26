@@ -18,19 +18,19 @@ public class Restaurant {
         return dishesList;
     }
 
-    public  String getName() {
+    public String getName() {
         return name;
     }
 
     public void printMenu() {
-
+        // Implemente a lógica de impressão do menu, se necessário.
     }
 
     public void addFood(Dish dish) {
         dishesList.add(dish);
     }
 
-    public  void removeOrder(Dish dish) {
+    public void removeFood(Dish dish) {
         dishesList.remove(dish);
     }
 

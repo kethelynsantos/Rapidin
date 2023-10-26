@@ -10,6 +10,10 @@ public class App {
     public static Restaurant restaurant;
     public static User user;
 
+    public static ArrayList<Order> getOrdersList() {
+        return ordersList;
+    }
+
     public static void initializeRestaurants() {
         // Crie restaurantes
         Restaurant restaurant1 = new Restaurant("Restaurante 1", "CNPJ 1");
@@ -43,5 +47,9 @@ public class App {
 
     public static void registerUser(User user) {
         usersList.add(user);
+    }
+
+    public static void registerOrder(Order order) {
+        ordersList.add(order);
     }
 }

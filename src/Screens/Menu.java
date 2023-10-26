@@ -23,18 +23,18 @@ public class Menu extends Frame {
             dispose();
         });
 
-        // Crie a tabela
+        // cria a tabela
         JTable table = new JTable();
 
-        // Crie um modelo de tabela
+        // cria um modelo de tabela
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("Nome do Prato");
         model.addColumn("Preço");
 
-        // Obtenha a lista de pratos do restaurante selecionado
+        // obtem a lista de pratos do restaurante selecionado
         ArrayList<Dish> dishList = selectedRestaurant.getFoods();
 
-        // Adicione as linhas da tabela com os pratos
+        // adiciona as linhas da tabela com os pratos
         for (Dish dish : dishList) {
             model.addRow(new Object[]{dish.getName(), dish.getPrice()});
         }

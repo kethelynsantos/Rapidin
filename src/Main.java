@@ -1,6 +1,5 @@
-package Screens;
-
 import Classes.*;
+import Screens.Start;
 
 public class Main {
     public static void main(String[] args) {

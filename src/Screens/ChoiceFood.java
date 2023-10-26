@@ -4,6 +4,7 @@ import Classes.*;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ChoiceFood extends Frame {
     private ArrayList<Dish> selectedDishes = new ArrayList<>(); // Lista temporária para armazenar os pratos selecionados
@@ -17,7 +18,6 @@ public class ChoiceFood extends Frame {
         // obtem a lista de pratos do restaurante selecionado
         ArrayList<Dish> dishesList = selectedRestaurant.getFoods();
 
-        String[] disheOptions = new String[dishesList.size()];
         DefaultComboBoxModel<Dish> model = new DefaultComboBoxModel<>(dishesList.toArray(new Dish[0]));
         JComboBox<Dish> dishComboBox = new JComboBox<>(model);
         dishComboBox.setBounds(90, 300, 200, 30);
@@ -26,13 +26,20 @@ public class ChoiceFood extends Frame {
         btn_add.setBounds(271, 671, 61, 61);
         btn_add.addActionListener(e -> {
             Dish selectedDish = dishComboBox.getItemAt(dishComboBox.getSelectedIndex());
-            selectedDishes.add(selectedDish); // Adiciona o prato selecionado à lista temporária
+            Order order = new Order(selectedDish, user, selectedRestaurant);
+            System.out.println("order " + selectedDish);
+            App.registerOrder(order); // Adicione o pedido diretamente à lista de pedidos em App
+            JOptionPane.showMessageDialog(ChoiceFood.this, "Prato adicionado ao pedido com sucesso!", "Confirmação", JOptionPane.INFORMATION_MESSAGE);
         });
 
         Button btn_confirm = new Button();
         btn_confirm.setBounds(57, 678, 185, 48);
         btn_confirm.addActionListener(e -> {
             Dish selectedDish = dishComboBox.getItemAt(dishComboBox.getSelectedIndex());
+            Order order = new Order(selectedDish, user, selectedRestaurant);
+            App.registerOrder(order); // Adicione o pedido diretamente à lista de pedidos em App
+            JOptionPane.showMessageDialog(ChoiceFood.this, "Pedido registrado com sucesso.", "Confirmação", JOptionPane.INFORMATION_MESSAGE);
+
             ChoiceOrder choiceOrder = new ChoiceOrder(selectedDish);
             choiceOrder.setVisible(true);
             dispose();
@@ -46,7 +53,7 @@ public class ChoiceFood extends Frame {
             dispose();
         });
 
-        // Adiciona o botão à tela
+        // Adicione o botão à tela
         getContentPane().add(btn_add);
         getContentPane().add(btn_back);
         getContentPane().add(btn_confirm);
