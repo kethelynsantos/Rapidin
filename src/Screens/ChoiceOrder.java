@@ -1,12 +1,16 @@
 package Screens;
 
 
-import Classes.Button;
-import Classes.Frame;
+import Classes.*;
+
+import javax.swing.*;
+import java.util.ArrayList;
 
 public class ChoiceOrder extends Frame {
-    public ChoiceOrder() {
+    public ChoiceOrder(Dish selectedDish) {
         super("ChoiceOrder", "src/Images/choice_order.png");
+
+        Restaurant.dish = selectedDish;
 
         Button btn_ok = new Button();
         btn_ok.setBounds(47, 675, 295, 48);
@@ -19,9 +23,8 @@ public class ChoiceOrder extends Frame {
         Button btn_back = new Button();
         btn_back.setBounds(28, 50, 30, 30);
         btn_back.addActionListener(e -> {
-            System.out.println("fui clicado");
-            ChoiceRest choiceRest = new ChoiceRest();
-            choiceRest.setVisible(true);
+            ChoiceFood choiceFood = new ChoiceFood(App.restaurant, App.user);
+            choiceFood.setVisible(true);
             dispose();
         });
 
@@ -35,6 +38,6 @@ public class ChoiceOrder extends Frame {
     }
 
     public static void main(String[] args) {
-        new ChoiceOrder();
+        new ChoiceOrder(Restaurant.dish);
     }
 }

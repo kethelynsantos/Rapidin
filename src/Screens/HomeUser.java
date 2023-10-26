@@ -12,7 +12,6 @@ public class HomeUser extends Frame {
         Button btn_back = new Button();
         btn_back.setBounds(28, 50, 30, 30);
         btn_back.addActionListener(e -> {
-            System.out.println("fui clicado");
             Choice choice = new Choice();
             choice.setVisible(true);
             dispose();
@@ -21,8 +20,8 @@ public class HomeUser extends Frame {
         Button btn_order = new Button();
         btn_order.setBounds(29, 675, 167, 48);
         btn_order.addActionListener(e -> {
-            ChoiceRest choiceRest = new ChoiceRest();
-            choiceRest.setVisible(true);
+            ChoiceUser choiceUser = new ChoiceUser();
+            choiceUser.setVisible(true);
             dispose();
         });
 

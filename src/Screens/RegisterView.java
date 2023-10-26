@@ -1,10 +1,7 @@
 package Screens;
 
 
-import Classes.App;
-import Classes.Button;
-import Classes.Frame;
-import Classes.Restaurant;
+import Classes.*;
 
 import javax.swing.*;
 import java.util.ArrayList;

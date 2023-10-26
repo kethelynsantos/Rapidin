@@ -1,10 +1,7 @@
 package Screens;
 
 
-import Classes.Button;
-import Classes.Frame;
-import Classes.App;
-import Classes.Restaurant;
+import Classes.*;
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -29,7 +26,7 @@ public class RegisterChoice extends Frame {
         btn_next.setBounds(47, 675, 295, 48);
         btn_next.addActionListener(e -> {
             App.restaurant = restaurantComboBox.getItemAt(restaurantComboBox.getSelectedIndex());
-            RegisterOrder registerOrder = new RegisterOrder();
+            RegisterOrder registerOrder = new RegisterOrder(App.restaurant);
             registerOrder.setVisible(true);
             dispose();
         });

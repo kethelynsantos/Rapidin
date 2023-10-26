@@ -1,8 +1,8 @@
 package Classes;
 
 public class User {
-    private String name;
-    private String cpf;
+    public String name;
+    public String cpf;
 
     public User(String name, String cpf) {
         this.name = name;
@@ -11,6 +11,6 @@ public class User {
 
     @Override
     public String toString() {
-        return name + " " + cpf;
+        return name;
     }
 }

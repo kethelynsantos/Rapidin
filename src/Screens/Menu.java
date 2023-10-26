@@ -9,17 +9,17 @@ import java.util.ArrayList;
 
 
 public class Menu extends Frame {
-    private final Restaurant selectedRestaurant;
 
     public Menu(Restaurant selectedRestaurant) {
         super("Menu", "src/Images/menu.png");
-        this.selectedRestaurant = selectedRestaurant;
+
+        System.out.println("restaurante selecionado: " + selectedRestaurant);
 
         Button btn_back = new Button();
         btn_back.setBounds(28, 50, 30, 30);
         btn_back.addActionListener(e -> {
-            HomeUser homeUser = new HomeUser();
-            homeUser.setVisible(true);
+            Choice choice = new Choice();
+            choice.setVisible(true);
             dispose();
         });
 
@@ -32,18 +32,18 @@ public class Menu extends Frame {
         model.addColumn("Preço");
 
         // Obtenha a lista de pratos do restaurante selecionado
-        ArrayList<Food> foodList = Restaurant.getFoods();
+        ArrayList<Dish> dishList = selectedRestaurant.getFoods();
 
         // Adicione as linhas da tabela com os pratos
-        for (Food food : foodList) {
-            model.addRow(new Object[]{food.getName(), food.getPrice()});
+        for (Dish dish : dishList) {
+            model.addRow(new Object[]{dish.getName(), dish.getPrice()});
         }
 
         table.setModel(model);
 
         // Adicione a tabela à tela
         JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(50, 100, 300, 400);
+        scrollPane.setBounds(45, 283, 300, 400);
         getContentPane().add(scrollPane);
 
         // Adicione o botão à tela
@@ -53,5 +53,4 @@ public class Menu extends Frame {
         setLocationRelativeTo(null);
         setResizable(false);
     }
-
 }

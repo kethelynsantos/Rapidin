@@ -17,7 +17,6 @@ public class RegisterRest extends Frame {
         Button btn_back = new Button();
         btn_back.setBounds(28, 50, 30, 30);
         btn_back.addActionListener(e -> {
-            System.out.println("fui clicado");
             Choice choice = new Choice();
             choice.setVisible(true);
             dispose();

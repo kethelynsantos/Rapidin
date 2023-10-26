@@ -5,8 +5,12 @@ import java.util.Objects;
 import javax.swing.JOptionPane;
 
 public class RegisterOrder extends Frame {
-    public RegisterOrder() {
+    public RegisterOrder(Restaurant selectedRestaurant) {
         super("RegisterOrder", "src/Images/register_order.png");
+
+        App.restaurant = selectedRestaurant;
+
+        System.out.println("restaurante selecionado: " + selectedRestaurant);
 
         Input nameField = new Input();
         nameField.setBounds(47, 246, 297, 35);
@@ -39,9 +43,8 @@ public class RegisterOrder extends Frame {
 
                 try {
                     double price = Double.parseDouble(priceStr);
-                    Food food = new Food(name, price);
-                    App.restaurant.addFood(food);
-                    App.restaurant = null;
+                    Dish dish = new Dish(name, price);
+                    selectedRestaurant.addFood(dish); // Adicione o prato ao restaurante selecionado
                     OrderOk orderOk = new OrderOk();
                     orderOk.setVisible(true);
                     dispose();
@@ -66,9 +69,5 @@ public class RegisterOrder extends Frame {
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);
-    }
-
-    public static void main(String[] args) {
-        new RegisterOrder();
     }
 }

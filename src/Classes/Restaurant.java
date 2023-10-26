@@ -3,38 +3,39 @@ package Classes;
 import java.util.ArrayList;
 
 public class Restaurant {
-    public String name;
-    public String cnpj;
-    public static ArrayList<Food> foodsList = new ArrayList<>();
-
+    private String name;
+    private String cnpj;
+    private ArrayList<Dish> dishesList;
+    public static Dish dish;
 
     public Restaurant(String name, String cnpj) {
         this.name = name;
         this.cnpj = cnpj;
+        this.dishesList = new ArrayList<>();
+    }
+
+    public ArrayList<Dish> getDishesList() {
+        return dishesList;
     }
 
     public  String getName() {
         return name;
     }
 
-    public  void printMenu() {
+    public void printMenu() {
 
     }
 
-    public static ArrayList<Food> getFoods() {
-        return foodsList;
+    public void addFood(Dish dish) {
+        dishesList.add(dish);
     }
 
-    public  void addFood(Food food) {
-        foodsList.add(food);
-
-        System.out.println(foodsList);
+    public  void removeOrder(Dish dish) {
+        dishesList.remove(dish);
     }
 
-    public  void removeOrder(Food food) {
-        foodsList.remove(food);
-
-        System.out.println(foodsList);
+    public ArrayList<Dish> getFoods() {
+        return dishesList;
     }
 
     @Override

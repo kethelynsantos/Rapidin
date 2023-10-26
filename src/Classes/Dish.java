@@ -1,10 +1,10 @@
 package Classes;
 
-public class Food {
+public class Dish {
     private String name;
     private double price;
 
-    public Food(String name, double price) {
+    public Dish(String name, double price) {
         this.name = name;
         this.price = price;
     }
