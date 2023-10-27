@@ -70,7 +70,7 @@ public class RegisterUser extends Frame {
             dispose();
         });
 
-        // Adiciona à tela
+        // adiciona à tela
         getContentPane().add(btn_back);
         getContentPane().add(btn_register);
         getContentPane().add(btn_account);
@@ -80,9 +80,5 @@ public class RegisterUser extends Frame {
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);
-    }
-
-    public static void main(String[] args) {
-        new RegisterUser();
     }
 }

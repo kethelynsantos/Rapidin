@@ -49,8 +49,4 @@ public class RegisterView extends Frame {
         setLocationRelativeTo(null);
         setResizable(false);
     }
-
-    public static void main(String[] args) {
-        new RegisterView();
-    }
 }

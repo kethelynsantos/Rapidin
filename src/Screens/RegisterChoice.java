@@ -48,8 +48,4 @@ public class RegisterChoice extends Frame {
         setLocationRelativeTo(null);
         setResizable(false);
     }
-
-    public static void main(String[] args) {
-        new RegisterChoice();
-    }
 }

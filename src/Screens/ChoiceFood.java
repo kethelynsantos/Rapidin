@@ -7,7 +7,16 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class ChoiceFood extends Frame {
-    private ArrayList<Dish> selectedDishes = new ArrayList<>(); // Lista temporária para armazenar os pratos selecionados
+    private ArrayList<Dish> selectedDishes = new ArrayList<>();
+
+    public void addSelectedDish(Dish dish) {
+        selectedDishes.add(dish);
+    }
+
+    public ArrayList<Dish> getSelectedDishes() {
+        return selectedDishes;
+    }
+
     public ChoiceFood(Restaurant selectedRestaurant, User user) {
         super("ChoiceFood", "src/Images/choice_food.png");
 
@@ -15,7 +24,7 @@ public class ChoiceFood extends Frame {
         JPanel choicePanel = new JPanel();
         choicePanel.setLayout(null);
 
-        // obtem a lista de pratos do restaurante selecionado
+        // obtem a lista de pratos
         ArrayList<Dish> dishesList = selectedRestaurant.getFoods();
 
         DefaultComboBoxModel<Dish> model = new DefaultComboBoxModel<>(dishesList.toArray(new Dish[0]));
@@ -26,9 +35,10 @@ public class ChoiceFood extends Frame {
         btn_add.setBounds(271, 671, 61, 61);
         btn_add.addActionListener(e -> {
             Dish selectedDish = dishComboBox.getItemAt(dishComboBox.getSelectedIndex());
+            addSelectedDish(selectedDish);
             Order order = new Order(selectedDish, user, selectedRestaurant);
-            System.out.println("order " + selectedDish);
-            App.registerOrder(order); // Adicione o pedido diretamente à lista de pedidos em App
+
+            App.registerOrder(order);
             JOptionPane.showMessageDialog(ChoiceFood.this, "Prato adicionado ao pedido com sucesso!", "Confirmação", JOptionPane.INFORMATION_MESSAGE);
         });
 
@@ -37,10 +47,10 @@ public class ChoiceFood extends Frame {
         btn_confirm.addActionListener(e -> {
             Dish selectedDish = dishComboBox.getItemAt(dishComboBox.getSelectedIndex());
             Order order = new Order(selectedDish, user, selectedRestaurant);
-            App.registerOrder(order); // Adicione o pedido diretamente à lista de pedidos em App
-            JOptionPane.showMessageDialog(ChoiceFood.this, "Pedido registrado com sucesso.", "Confirmação", JOptionPane.INFORMATION_MESSAGE);
+            App.registerOrder(order);
 
-            ChoiceOrder choiceOrder = new ChoiceOrder(selectedDish);
+            ArrayList<Dish> selectedDishes = getSelectedDishes();
+            ChoiceOrder choiceOrder = new ChoiceOrder(App.getOrdersList(), selectedDishes); // Passe a lista para ChoiceOrder
             choiceOrder.setVisible(true);
             dispose();
         });
@@ -53,7 +63,6 @@ public class ChoiceFood extends Frame {
             dispose();
         });
 
-        // Adicione o botão à tela
         getContentPane().add(btn_add);
         getContentPane().add(btn_back);
         getContentPane().add(btn_confirm);
@@ -64,7 +73,4 @@ public class ChoiceFood extends Frame {
         setResizable(false);
     }
 
-    public static void main(String[] args) {
-        new ChoiceFood(App.restaurant, App.user);
-    }
 }

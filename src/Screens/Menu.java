@@ -34,19 +34,16 @@ public class Menu extends Frame {
         // obtem a lista de pratos do restaurante selecionado
         ArrayList<Dish> dishList = selectedRestaurant.getFoods();
 
-        // adiciona as linhas da tabela com os pratos
         for (Dish dish : dishList) {
             model.addRow(new Object[]{dish.getName(), dish.getPrice()});
         }
 
         table.setModel(model);
 
-        // Adicione a tabela à tela
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBounds(45, 283, 300, 400);
         getContentPane().add(scrollPane);
 
-        // Adicione o botão à tela
         getContentPane().add(btn_back);
 
         setVisible(true);

@@ -9,7 +9,7 @@ public class HomeRest extends Frame {
     public HomeRest() {
         super("HomeRest", "src/Images/home_rest.png");
         Button btn_choice = new Button();
-        btn_choice.setBounds(47, 675, 167, 48);
+        btn_choice.setBounds(24, 675, 167, 48);
         btn_choice.addActionListener(e -> {
             RegisterChoice registerChoice = new RegisterChoice();
             registerChoice.setVisible(true);
@@ -17,7 +17,7 @@ public class HomeRest extends Frame {
         });
 
         Button btn_view = new Button();
-        btn_view.setBounds(205, 675, 167, 48);
+        btn_view.setBounds(200, 675, 167, 48);
         btn_view.addActionListener(e -> {
             RegisterView registerView = new RegisterView();
             registerView.setVisible(true);
@@ -40,9 +40,5 @@ public class HomeRest extends Frame {
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);
-    }
-
-    public static void main(String[] args) {
-        new HomeRest();
     }
 }

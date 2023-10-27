@@ -33,8 +33,4 @@ public class Choice extends Frame {
         setLocationRelativeTo(null);
         setResizable(false);
     }
-
-    public static void main(String[] args) {
-        new Choice();
-    }
 }

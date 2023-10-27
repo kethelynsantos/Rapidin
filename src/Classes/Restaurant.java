@@ -22,10 +22,6 @@ public class Restaurant {
         return name;
     }
 
-    public void printMenu() {
-        // Implemente a lógica de impressão do menu, se necessário.
-    }
-
     public void addFood(Dish dish) {
         dishesList.add(dish);
     }

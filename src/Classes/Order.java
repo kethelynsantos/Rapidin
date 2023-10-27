@@ -1,24 +1,17 @@
 package Classes;
 
-import java.util.ArrayList;
-
 public class Order {
-    private String restaurants;
-    private String users;
+    private Dish orderedDish;
+    private User user;
+    private Restaurant restaurant;
 
-    public Order(String restaurants, String users) {
-        this.restaurants = restaurants;
-        this.users = users;
+    public Order(Dish orderedDish, User user, Restaurant restaurant) {
+        this.orderedDish = orderedDish;
+        this.user = user;
+        this.restaurant = restaurant;
     }
 
-    public Order(Dish selectedDish, User user, Restaurant selectedRestaurant) {
-    }
-
-    public static void placeOrder() {
-
-    }
-
-    public static void printOrder() {
-
+    public Dish getOrderedDish() {
+        return orderedDish;
     }
 }

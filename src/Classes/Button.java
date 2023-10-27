@@ -7,6 +7,6 @@ public class Button extends JButton {
         // Configura os atributos do botão
         setOpaque(false);
         setContentAreaFilled(false);
-        setBorderPainted(true);
+        setBorderPainted(false);
     }
 }

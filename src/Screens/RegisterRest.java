@@ -1,7 +1,6 @@
 package Screens;
 
 import Classes.*;
-import java.util.Objects;
 import javax.swing.JOptionPane;
 
 public class RegisterRest extends Frame {
@@ -28,8 +27,8 @@ public class RegisterRest extends Frame {
             String name = nameField.getText();
             String cnpj = cnpjField.getText();
 
-            if (!Objects.equals(name, "") && !Objects.equals(cnpj, "")) {
-                // verifica se o nome contém apenas caracteres
+            if (!name.isEmpty() && !cnpj.isEmpty()) {
+                // verifica se o nome contém apenas letras e espaços
                 if (!name.matches("^[a-zA-Z\\s]+$")) {
                     JOptionPane.showMessageDialog(RegisterRest.this,
                             "Nome inválido. Deve conter apenas letras e espaços.", "Erro",
@@ -37,21 +36,19 @@ public class RegisterRest extends Frame {
                     return;
                 }
 
+                // verifica se o CNPJ é válido
+                if (!isCnpjValid(cnpj)) {
+                    JOptionPane.showMessageDialog(RegisterRest.this,
+                            "O CNPJ não é válido.", "Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
 
-                    Restaurant restaurant = new Restaurant(name, cnpj);
-                    System.out.println(name + cnpj);
-                    System.out.println("restaurant" + restaurant);
+                App.registerRest(name, cnpj);
 
-                    App.registerRest(name, cnpj);
-
-                    RestOk restOk = new RestOk();
-                    restOk.setVisible(true);
-                    dispose();
-//                } else {
-//                    JOptionPane.showMessageDialog(RegisterRest.this,
-//                            "O CNPJ não é válido.", "Erro",
-//                            JOptionPane.ERROR_MESSAGE);
-//                }
+                RestOk restOk = new RestOk();
+                restOk.setVisible(true);
+                dispose();
             } else {
                 JOptionPane.showMessageDialog(RegisterRest.this,
                         "Por favor, preencha todos os campos.", "Erro",
@@ -67,7 +64,7 @@ public class RegisterRest extends Frame {
             dispose();
         });
 
-        // Adicione à tela
+        // adiciona à tela
         getContentPane().add(btn_back);
         getContentPane().add(btn_register);
         getContentPane().add(btn_account);
@@ -104,5 +101,4 @@ public class RegisterRest extends Frame {
 
         return !allDigitsEqual;
     }
-
 }

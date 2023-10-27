@@ -24,8 +24,4 @@ public class OrderOk extends Frame {
         setLocationRelativeTo(null);
         setResizable(false);
     }
-
-    public static void main(String[] args) {
-        new OrderOk();
-    }
 }

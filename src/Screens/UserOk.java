@@ -17,15 +17,11 @@ public class UserOk extends Frame {
         });
 
 
-        // Adiciona o botão à tela
+        // adiciona o botão à tela
         getContentPane().add(btn_continue);
 
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);
-    }
-
-    public static void main(String[] args) {
-        new UserOk();
     }
 }

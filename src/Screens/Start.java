@@ -17,7 +17,7 @@ public class Start extends Frame {
         });
 
 
-        // Adiciona o botão à tela
+        // adiciona o botão à tela
         getContentPane().add(btn_start);
 
         setVisible(true);

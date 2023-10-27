@@ -25,25 +25,21 @@ public class HomeUser extends Frame {
             dispose();
         });
 
-        Button btn_menu = new Button();
-        btn_menu.setBounds(205, 675, 167, 48);
-        btn_menu.addActionListener(e -> {
-            Menu menu = new Menu(App.restaurant);
-            menu.setVisible(true);
+        Button btn_view = new Button();
+        btn_view.setBounds(205, 675, 167, 48);
+        btn_view.addActionListener(e -> {
+            RegisterView registerView = new RegisterView();
+            registerView.setVisible(true);
             dispose();
         });
 
         // Adiciona o botão à tela
         getContentPane().add(btn_back);
         getContentPane().add(btn_order);
-        getContentPane().add(btn_menu);
+        getContentPane().add(btn_view);
 
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);
-    }
-
-    public static void main(String[] args) {
-        new HomeUser();
     }
 }
